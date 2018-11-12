@@ -1,0 +1,1276 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1000px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1400px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1800px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+
+.container {
+  width: 87.5rem;
+  margin: auto;
+}
+
+.animation {
+  position: relative;
+  height: 600px;
+  margin: 50px 100px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+  -webkit-perspective: 2000px;
+          perspective: 2000px;
+}
+
+@-webkit-keyframes animation1 {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  20% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  80% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+
+@keyframes animation1 {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  20% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  80% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+
+.animation-1 .controll {
+  position: absolute;
+  width: 12.5%;
+  height: 400px;
+  -webkit-animation: animation1 10s infinite alternate;
+          animation: animation1 10s infinite alternate;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-1 .controll .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/01.jpg") no-repeat;
+  color: #ccc;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+  background-size: 87.5rem 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-1 .controll .front::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.animation-1 .controll .front::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+.animation-1 .controll .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/02.jpg") no-repeat;
+  color: #ccc;
+  background-size: 87.5rem 100%;
+  -webkit-transform: rotateX(180deg) translateZ(10px);
+          transform: rotateX(180deg) translateZ(10px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-1 .controll .back::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+.animation-1 .controll .back::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.animation-1 .part-1 {
+  left: 0%;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.animation-1 .part-1 .front, .animation-1 .part-1 .back {
+  background-position: 0%;
+}
+
+.animation-1 .part-2 {
+  left: 12.5%;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.animation-1 .part-2 .front, .animation-1 .part-2 .back {
+  background-position: 12.5%;
+}
+
+.animation-1 .part-3 {
+  left: 25%;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.animation-1 .part-3 .front, .animation-1 .part-3 .back {
+  background-position: 25%;
+}
+
+.animation-1 .part-4 {
+  left: 37.5%;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.animation-1 .part-4 .front, .animation-1 .part-4 .back {
+  background-position: 37.5%;
+}
+
+.animation-1 .part-5 {
+  left: 50%;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.animation-1 .part-5 .front, .animation-1 .part-5 .back {
+  background-position: 50%;
+}
+
+.animation-1 .part-6 {
+  left: 62.5%;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.animation-1 .part-6 .front, .animation-1 .part-6 .back {
+  background-position: 62.5%;
+}
+
+.animation-1 .part-7 {
+  left: 75%;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+.animation-1 .part-7 .front, .animation-1 .part-7 .back {
+  background-position: 75%;
+}
+
+.animation-1 .part-8 {
+  left: 87.5%;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.animation-1 .part-8 .front, .animation-1 .part-8 .back {
+  background-position: 87.5%;
+}
+
+@-webkit-keyframes animation2 {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  20% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  80% {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  20% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  80% {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+}
+
+.animation-2 .controll {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  -webkit-animation: animation2 10s infinite alternate;
+          animation: animation2 10s infinite alternate;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-2 .controll .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/04.jpg") no-repeat;
+  color: #ccc;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+  background-size: 100% 400px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-2 .controll .front::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.animation-2 .controll .front::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+.animation-2 .controll .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/03.jpg") no-repeat;
+  color: #ccc;
+  background-size: 100% 400px;
+  -webkit-transform: rotateX(180deg) translateZ(10px);
+          transform: rotateX(180deg) translateZ(10px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-2 .controll .back::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+.animation-2 .controll .back::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.animation-2 .controll .back {
+  -webkit-transform: rotateY(180deg) translateZ(10px);
+          transform: rotateY(180deg) translateZ(10px);
+}
+
+.animation-2 .part-1 {
+  top: 0px;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.animation-2 .part-1 .front, .animation-2 .part-1 .back {
+  background-position: 0 0%;
+}
+
+.animation-2 .part-2 {
+  top: 80px;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.animation-2 .part-2 .front, .animation-2 .part-2 .back {
+  background-position: 0 25%;
+}
+
+.animation-2 .part-3 {
+  top: 160px;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.animation-2 .part-3 .front, .animation-2 .part-3 .back {
+  background-position: 0 50%;
+}
+
+.animation-2 .part-4 {
+  top: 240px;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.animation-2 .part-4 .front, .animation-2 .part-4 .back {
+  background-position: 0 75%;
+}
+
+.animation-2 .part-5 {
+  top: 320px;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.animation-2 .part-5 .front, .animation-2 .part-5 .back {
+  background-position: 0 100%;
+}
+
+@-webkit-keyframes animation3 {
+  0% {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+  }
+  28% {
+    -webkit-transform: translateZ(-420px) rotateY(0deg);
+            transform: translateZ(-420px) rotateY(0deg);
+  }
+  30% {
+    -webkit-transform: translateZ(-400px) rotateY(0deg);
+            transform: translateZ(-400px) rotateY(0deg);
+  }
+  35% {
+    -webkit-transform: translateZ(-400px) rotateY(25deg);
+            transform: translateZ(-400px) rotateY(25deg);
+  }
+  52% {
+    -webkit-transform: translateZ(-400px) rotateY(-210deg);
+            transform: translateZ(-400px) rotateY(-210deg);
+  }
+  62% {
+    -webkit-transform: translateZ(-400px) rotateY(-180deg);
+            transform: translateZ(-400px) rotateY(-180deg);
+  }
+  68% {
+    -webkit-transform: translateZ(-400px) rotateY(-180deg);
+            transform: translateZ(-400px) rotateY(-180deg);
+  }
+  72% {
+    -webkit-transform: translateZ(-420px) rotateY(-180deg);
+            transform: translateZ(-420px) rotateY(-180deg);
+  }
+  90% {
+    -webkit-transform: translateZ(80px) rotateY(-180deg);
+            transform: translateZ(80px) rotateY(-180deg);
+  }
+  100% {
+    -webkit-transform: translateZ(50px) rotateY(-180deg);
+            transform: translateZ(50px) rotateY(-180deg);
+  }
+}
+
+@keyframes animation3 {
+  0% {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+  }
+  28% {
+    -webkit-transform: translateZ(-420px) rotateY(0deg);
+            transform: translateZ(-420px) rotateY(0deg);
+  }
+  30% {
+    -webkit-transform: translateZ(-400px) rotateY(0deg);
+            transform: translateZ(-400px) rotateY(0deg);
+  }
+  35% {
+    -webkit-transform: translateZ(-400px) rotateY(25deg);
+            transform: translateZ(-400px) rotateY(25deg);
+  }
+  52% {
+    -webkit-transform: translateZ(-400px) rotateY(-210deg);
+            transform: translateZ(-400px) rotateY(-210deg);
+  }
+  62% {
+    -webkit-transform: translateZ(-400px) rotateY(-180deg);
+            transform: translateZ(-400px) rotateY(-180deg);
+  }
+  68% {
+    -webkit-transform: translateZ(-400px) rotateY(-180deg);
+            transform: translateZ(-400px) rotateY(-180deg);
+  }
+  72% {
+    -webkit-transform: translateZ(-420px) rotateY(-180deg);
+            transform: translateZ(-420px) rotateY(-180deg);
+  }
+  90% {
+    -webkit-transform: translateZ(80px) rotateY(-180deg);
+            transform: translateZ(80px) rotateY(-180deg);
+  }
+  100% {
+    -webkit-transform: translateZ(50px) rotateY(-180deg);
+            transform: translateZ(50px) rotateY(-180deg);
+  }
+}
+
+.animation-3 .controll {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  -webkit-animation: animation3 10s infinite alternate;
+          animation: animation3 10s infinite alternate;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-3 .controll .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/05.jpg") no-repeat;
+  color: #ccc;
+  -webkit-transform: translateZ(80px);
+          transform: translateZ(80px);
+  background-size: 87.5rem 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-3 .controll .front::before {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.animation-3 .controll .front::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 160px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+.animation-3 .controll .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/01.jpg") no-repeat;
+  color: #ccc;
+  background-size: 87.5rem 100%;
+  -webkit-transform: rotateX(180deg) translateZ(80px);
+          transform: rotateX(180deg) translateZ(80px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-3 .controll .back::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+.animation-3 .controll .back::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.animation-3 .controll .front, .animation-3 .controll .back {
+  color: #888;
+}
+
+.animation-3 .controll .back {
+  -webkit-transform: rotateY(180deg) translateZ(80px);
+          transform: rotateY(180deg) translateZ(80px);
+}
+
+.animation-3 .part-1 {
+  left: 0%;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.animation-3 .part-1 .front, .animation-3 .part-1 .back {
+  background-position-x: 0%;
+}
+
+.animation-3 .part-2 {
+  left: 20%;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.animation-3 .part-2 .front, .animation-3 .part-2 .back {
+  background-position-x: 20%;
+}
+
+.animation-3 .part-3 {
+  left: 40%;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.animation-3 .part-3 .front, .animation-3 .part-3 .back {
+  background-position-x: 40%;
+}
+
+.animation-3 .part-4 {
+  left: 60%;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.animation-3 .part-4 .front, .animation-3 .part-4 .back {
+  background-position-x: 60%;
+}
+
+.animation-3 .part-5 {
+  left: 80%;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.animation-3 .part-5 .front, .animation-3 .part-5 .back {
+  background-position-x: 80%;
+}
+
+@-webkit-keyframes animation4 {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  15% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  85% {
+    -webkit-transform: rotateX(180deg) rotateY(360deg);
+            transform: rotateX(180deg) rotateY(360deg);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg) rotateY(360deg);
+            transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+@keyframes animation4 {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  15% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  85% {
+    -webkit-transform: rotateX(180deg) rotateY(360deg);
+            transform: rotateX(180deg) rotateY(360deg);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg) rotateY(360deg);
+            transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+.animation-4 .controll {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  -webkit-animation: animation4 10s infinite alternate;
+          animation: animation4 10s infinite alternate;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-4 .controll .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/02.jpg") no-repeat;
+  color: #ccc;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+  background-size: 87.5rem 37.5rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-4 .controll .front::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.animation-4 .controll .front::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+.animation-4 .controll .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/03.jpg") no-repeat;
+  color: #ccc;
+  background-size: 87.5rem 37.5rem;
+  -webkit-transform: rotateX(180deg) translateZ(10px);
+          transform: rotateX(180deg) translateZ(10px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-4 .controll .back::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+.animation-4 .controll .back::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.animation-4 .part-1 {
+  left: 0%;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+.animation-4 .part-1 .front, .animation-4 .part-1 .back {
+  background-position-x: 0%;
+}
+
+.animation-4 .part-2 {
+  left: 10%;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+}
+
+.animation-4 .part-2 .front, .animation-4 .part-2 .back {
+  background-position-x: 10%;
+}
+
+.animation-4 .part-3 {
+  left: 20%;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+
+.animation-4 .part-3 .front, .animation-4 .part-3 .back {
+  background-position-x: 20%;
+}
+
+.animation-4 .part-4 {
+  left: 30%;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+
+.animation-4 .part-4 .front, .animation-4 .part-4 .back {
+  background-position-x: 30%;
+}
+
+.animation-4 .part-5 {
+  left: 40%;
+  -webkit-animation-delay: -2.5s;
+          animation-delay: -2.5s;
+}
+
+.animation-4 .part-5 .front, .animation-4 .part-5 .back {
+  background-position-x: 40%;
+}
+
+.animation-4 .part-6 {
+  left: 50%;
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+}
+
+.animation-4 .part-6 .front, .animation-4 .part-6 .back {
+  background-position-x: 50%;
+}
+
+.animation-4 .part-7 {
+  left: 60%;
+  -webkit-animation-delay: -3.5s;
+          animation-delay: -3.5s;
+}
+
+.animation-4 .part-7 .front, .animation-4 .part-7 .back {
+  background-position-x: 60%;
+}
+
+.animation-4 .part-8 {
+  left: 70%;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+}
+
+.animation-4 .part-8 .front, .animation-4 .part-8 .back {
+  background-position-x: 70%;
+}
+
+.animation-4 .part-9 {
+  left: 80%;
+  -webkit-animation-delay: -4.5s;
+          animation-delay: -4.5s;
+}
+
+.animation-4 .part-9 .front, .animation-4 .part-9 .back {
+  background-position-x: 80%;
+}
+
+.animation-4 .part-10 {
+  left: 90%;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+}
+
+.animation-4 .part-10 .front, .animation-4 .part-10 .back {
+  background-position-x: 90%;
+}
+
+@-webkit-keyframes animation5 {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  8% {
+    -webkit-transform: rotateX(5deg) rotateY(20deg) rotateZ(5deg);
+            transform: rotateX(5deg) rotateY(20deg) rotateZ(5deg);
+  }
+  16% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(-75deg) rotateY(220deg) rotateZ(-50deg);
+            transform: rotateX(-75deg) rotateY(220deg) rotateZ(-50deg);
+  }
+  80% {
+    -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+            transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+            transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+  }
+}
+
+@keyframes animation5 {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  8% {
+    -webkit-transform: rotateX(5deg) rotateY(20deg) rotateZ(5deg);
+            transform: rotateX(5deg) rotateY(20deg) rotateZ(5deg);
+  }
+  16% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(-75deg) rotateY(220deg) rotateZ(-50deg);
+            transform: rotateX(-75deg) rotateY(220deg) rotateZ(-50deg);
+  }
+  80% {
+    -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+            transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+            transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+  }
+}
+
+.animation-5 .controll {
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  -webkit-animation: animation5 10s infinite alternate;
+          animation: animation5 10s infinite alternate;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-5 .controll .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/04.jpg") no-repeat;
+  color: #ccc;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+  background-size: 75rem 37.5rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-5 .controll .front::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.animation-5 .controll .front::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: currentColor;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+.animation-5 .controll .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/05.jpg") no-repeat;
+  color: #ccc;
+  background-size: 75rem 37.5rem;
+  -webkit-transform: rotateX(180deg) translateZ(10px);
+          transform: rotateX(180deg) translateZ(10px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animation-5 .controll .back::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+.animation-5 .controll .back::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: currentColor;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.animation-5 .part-1 {
+  -webkit-animation-delay: 3.2s;
+          animation-delay: 3.2s;
+}
+
+.animation-5 .part-2 {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.animation-5 .part-3 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.animation-5 .part-4 {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.animation-5 .part-5 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.animation-5 .part-6 {
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+
+.animation-5 .part-7 {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.animation-5 .part-8 {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.animation-5 .part-9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.animation-5 .part-10 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.animation-5 .part-11 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.animation-5 .part-12 {
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
+
+.animation-5 .part-13 {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.animation-5 .part-14 {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.animation-5 .part-15 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.animation-5 .part-16 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.animation-5 .part-1 {
+  left: 0%;
+  top: 0%;
+}
+
+.animation-5 .part-1 .front, .animation-5 .part-1 .back {
+  background-position: 0% 0%;
+}
+
+.animation-5 .part-2 {
+  left: 25%;
+  top: 0%;
+}
+
+.animation-5 .part-2 .front, .animation-5 .part-2 .back {
+  background-position: 33% 0%;
+}
+
+.animation-5 .part-3 {
+  left: 50%;
+  top: 0%;
+}
+
+.animation-5 .part-3 .front, .animation-5 .part-3 .back {
+  background-position: 66% 0%;
+}
+
+.animation-5 .part-4 {
+  left: 75%;
+  top: 0%;
+}
+
+.animation-5 .part-4 .front, .animation-5 .part-4 .back {
+  background-position: 99% 0%;
+}
+
+.animation-5 .part-5 {
+  left: 0%;
+  top: 25%;
+}
+
+.animation-5 .part-5 .front, .animation-5 .part-5 .back {
+  background-position: 0% 33%;
+}
+
+.animation-5 .part-6 {
+  left: 25%;
+  top: 25%;
+}
+
+.animation-5 .part-6 .front, .animation-5 .part-6 .back {
+  background-position: 33% 33%;
+}
+
+.animation-5 .part-7 {
+  left: 50%;
+  top: 25%;
+}
+
+.animation-5 .part-7 .front, .animation-5 .part-7 .back {
+  background-position: 66% 33%;
+}
+
+.animation-5 .part-8 {
+  left: 75%;
+  top: 25%;
+}
+
+.animation-5 .part-8 .front, .animation-5 .part-8 .back {
+  background-position: 99% 33%;
+}
+
+.animation-5 .part-9 {
+  left: 0%;
+  top: 50%;
+}
+
+.animation-5 .part-9 .front, .animation-5 .part-9 .back {
+  background-position: 0% 66%;
+}
+
+.animation-5 .part-10 {
+  left: 25%;
+  top: 50%;
+}
+
+.animation-5 .part-10 .front, .animation-5 .part-10 .back {
+  background-position: 33% 66%;
+}
+
+.animation-5 .part-11 {
+  left: 50%;
+  top: 50%;
+}
+
+.animation-5 .part-11 .front, .animation-5 .part-11 .back {
+  background-position: 66% 66%;
+}
+
+.animation-5 .part-12 {
+  left: 75%;
+  top: 50%;
+}
+
+.animation-5 .part-12 .front, .animation-5 .part-12 .back {
+  background-position: 99% 66%;
+}
+
+.animation-5 .part-13 {
+  left: 0%;
+  top: 75%;
+}
+
+.animation-5 .part-13 .front, .animation-5 .part-13 .back {
+  background-position: 0% 99%;
+}
+
+.animation-5 .part-14 {
+  left: 25%;
+  top: 75%;
+}
+
+.animation-5 .part-14 .front, .animation-5 .part-14 .back {
+  background-position: 33% 99%;
+}
+
+.animation-5 .part-15 {
+  left: 50%;
+  top: 75%;
+}
+
+.animation-5 .part-15 .front, .animation-5 .part-15 .back {
+  background-position: 66% 99%;
+}
+
+.animation-5 .part-16 {
+  left: 75%;
+  top: 75%;
+}
+
+.animation-5 .part-16 .front, .animation-5 .part-16 .back {
+  background-position: 99% 99%;
+}
+/*# sourceMappingURL=index.css.map */

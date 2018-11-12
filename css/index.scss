@@ -1,0 +1,377 @@
+$img1: '../images/01.jpg';
+$img2: '../images/02.jpg';
+$img3: '../images/03.jpg';
+$img4: '../images/04.jpg';
+$img5: '../images/05.jpg';
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1000px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1400px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1800px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+
+.container {
+  width: 87.5rem;
+  margin: auto;
+}
+
+@mixin set_transform_3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@mixin set_front($img, $translateZ, $backgroundSize) {
+  .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url($img) no-repeat;
+    color: #ccc;
+    transform: translateZ($translateZ);
+    background-size: $backgroundSize;
+    @include set_transform_3d();
+  }
+
+  .front::before {
+    content: '';
+    position: absolute;
+    width: $translateZ * 2;
+    height: 100%;
+    background: currentColor;
+    transform-origin: 0 50%;
+    transform: rotateY(90deg);
+  }
+
+  .front::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: $translateZ * 2;
+    height: 100%;
+    background: currentColor;
+    transform-origin: 100% 50%;
+    transform: rotateY(-90deg);
+  }
+}
+
+@mixin set_back($img, $translateZ, $backgroundSize) {
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url($img) no-repeat;  
+    color: #ccc;
+    background-size: $backgroundSize;
+    transform: rotateX(180deg) translateZ($translateZ);
+  
+    @include set_transform_3d();
+  }
+  
+  .back::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: $translateZ * 2;
+    background: currentColor;
+    transform-origin: 50% 0;
+    transform: rotateX(-90deg);
+  }
+
+  .back::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $translateZ * 2;
+    background: currentColor;
+    transform-origin: 50% 100%;
+    transform: rotateX(90deg);
+  }
+} 
+
+.animation {
+  position: relative;
+  height: 600px;
+  margin: 50px 100px;
+  
+  @include set_transform_3d();
+  perspective: 2000px;
+}
+
+@keyframes animation1 {
+  0% {
+    transform: rotateX(0deg);
+  }
+  20% {
+    transform: rotateX(0deg);
+  }
+  80% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+
+.animation-1 {
+  .controll {
+    position: absolute;
+    width: 12.5%;
+    height: 400px;
+    animation: animation1 10s infinite alternate;
+
+    @include set_transform_3d();
+    @include set_front($img1, 10px, 87.5rem 100%);
+    @include set_back($img2, 10px, 87.5rem 100%);
+  }
+
+  @for $i from 1 through 8 {
+    .part-#{$i} {
+      left: 12.5% * ($i - 1);
+      animation-delay: .5s * $i;
+
+      .front, .back {
+        background-position: 12.5% * ($i - 1);
+      }
+    }
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  20% {
+    transform: rotateY(0deg);
+  }
+  80% {
+    transform: rotateY(-180deg);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+.animation-2 {
+  .controll {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    animation: animation2 10s infinite alternate;
+
+    @include set_transform_3d();
+    @include set_front($img4, 10px, 100% 400px);
+    @include set_back($img3, 10px, 100% 400px);
+
+    .back {
+      transform: rotateY(180deg) translateZ(10px);
+    }
+  }
+
+  @for $i from 1 through 5 {
+    .part-#{$i} {
+      top: 80px * ($i - 1);
+      animation-delay: .5s * $i;
+
+      .front, .back {
+        background-position: 0 25% * ($i - 1);
+      }
+    }
+  }
+}
+
+@keyframes animation3 {
+  0% {
+    transform: translateZ(50px);
+  }
+  28% {   
+    transform: translateZ(-420px) rotateY(0deg);
+  }
+  30% {   
+    transform: translateZ(-400px) rotateY(0deg);
+  }
+  35% {
+    transform: translateZ(-400px) rotateY(25deg);
+  }
+  52% {
+    transform: translateZ(-400px) rotateY(-210deg);
+  }
+  62% {
+    transform: translateZ(-400px) rotateY(-180deg);
+  }
+  68% {
+    transform: translateZ(-400px) rotateY(-180deg);
+  }
+  72% {
+    transform: translateZ(-420px) rotateY(-180deg);
+  }
+  90% { 
+    transform: translateZ(80px) rotateY(-180deg);
+  }
+  100% {
+    transform: translateZ(50px) rotateY(-180deg);
+  }
+}
+
+.animation-3 {
+  .controll {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    animation: animation3 10s infinite alternate;
+
+    @include set_transform_3d();
+    @include set_front($img5, 80px, 87.5rem 100%);
+    @include set_back($img1, 80px, 87.5rem 100%);
+
+    .front, .back {
+      color: #888;
+    }
+
+    .back {
+      transform: rotateY(180deg) translateZ(80px);
+    }
+  }
+
+  @for $i from 1 through 5 {
+    .part-#{$i} {
+      left: 20% * ($i - 1);
+      animation-delay: .5s * $i;
+
+      .front, .back {
+        background-position-x: 20% * ($i - 1);
+      }
+    }
+  }
+}
+
+@keyframes animation4 {
+  0% {    
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  15% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  85% {
+    transform: rotateX(180deg) rotateY(360deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+.animation-4 {
+  .controll {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    animation: animation4 10s infinite alternate;
+
+    @include set_transform_3d();
+    @include set_front($img2, 10px, 87.5rem 37.5rem);
+    @include set_back($img3, 10px, 87.5rem 37.5rem);
+  }
+
+  @for $i from 1 through 10 {
+    .part-#{$i} {
+      left: 10% * ($i - 1);
+      animation-delay: -0.5s * $i;
+
+      .front, .back {
+        background-position-x: 10% * ($i - 1);
+      }
+    }
+  }
+}
+
+@keyframes animation5 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  8% {
+    transform: rotateX(5deg) rotateY(20deg) rotateZ(5deg);
+  }
+  16% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(-75deg) rotateY(220deg) rotateZ(-50deg);
+  }
+  80% {
+    transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(180deg) rotateZ(180deg);
+  }
+}
+
+$arr: (
+  1: 3.2s, 
+  2: 0.6s, 
+  3: 1.0s, 
+  4: 1.8s, 
+  5: 3.0s, 
+  6: 2.8s, 
+  7: 2.2s, 
+  8: 2.4s, 
+  9: 0.2s, 
+  10: 2.0s, 
+  11: 0s, 
+  12: 2.6s, 
+  13: 1.4s, 
+  14: 1.2s, 
+  15: 0.4s, 
+  16: 0.8s
+); 
+
+.animation-5 {
+  .controll {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    animation: animation5 10s infinite alternate;
+    
+    @include set_transform_3d();
+    @include set_front($img4, 10px, 75rem 37.5rem);
+    @include set_back($img5, 10px, 75rem 37.5rem);
+  }
+
+  @each $key, $delay in $arr {
+    .part-#{$key} {
+      animation-delay: $delay;
+    }
+  }
+
+  @for $i from 1 through 16 {
+    .part-#{$i} {
+      left: ($i - 1) % 4 * 25%;
+      top: floor(($i - 1) / 4) * 25%;
+      // animation-delay: (random(2) - 1) * 2s; 
+
+      .front, .back {
+        background-position: ($i - 1) % 4 * 33% floor(($i - 1) / 4) * 33%;
+      }
+    }
+  }
+}
